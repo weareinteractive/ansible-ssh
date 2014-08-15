@@ -1,0 +1,11 @@
+---
+
+- name: Registering known hosts
+  sshknownhosts: >
+    host={{ item }}
+    state=present
+  with_items: ssh_known_hosts
+  tags:
+    - system
+    - networking
+    - ssh
