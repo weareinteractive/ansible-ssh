@@ -5,9 +5,8 @@
 
 > `ssh` is an [ansible](http://www.ansible.com) role which: 
 > 
-> * enables/disables root login
+> * configures ssh
 > * adds known_hosts
-> * sets umask
 
 ## Installation
 
