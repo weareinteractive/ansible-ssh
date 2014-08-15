@@ -4,10 +4,12 @@ language: python
 python: "2.7"
 before_install:
  - sudo apt-get update -qq
- - sudo apt-get install -qq python-apt python-pycurl aptitude
+ - sudo apt-get install -qq python-apt python-pycurl
 install:
   - pip install ansible
+  - git clone https://github.com/bfmartin/ansible-sshknownhosts.git /usr/local/share/ansible/sshknownhosts
 script:
   - echo localhost > inventory
+  - ln -s ansible-role-apache2 ../franklinkim.apache2
   - ansible-playbook --syntax-check -i inventory test.yml
   - ansible-playbook -i inventory test.yml --connection=local --sudo -vvvv

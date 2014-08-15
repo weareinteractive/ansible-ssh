@@ -1,17 +1,13 @@
 ---
 
 - hosts: all
-  handlers:
-    - include: 'handlers/main.yml'
-  vars_files:
-    - 'defaults/main.yml'
-  tasks:
-    - include: 'tasks/main.yml'
-      vars:
-        ssh_port:
-          - 22
-        ssh_permit_root_login: 'no'
-        ssh_pubkey_authentication: 'yes'
-        ssh_password_authentication: 'yes'
-        ssh_known_hosts:
-          - github.com
+  roles:
+    - franklinkim.ssh
+  vars:
+    ssh_port:
+      - 22
+    ssh_permit_root_login: 'no'
+    ssh_pubkey_authentication: 'yes'
+    ssh_password_authentication: 'yes'
+    ssh_known_hosts:
+      - github.com
