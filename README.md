@@ -1,10 +1,11 @@
 # Ansible Ssh Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-role-ssh.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-role-ssh)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-role-ssh.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-role-ssh)
+[![Build Status](https://travis-ci.org/weareinteractive/ansible-ssh.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-ssh)
+[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-ssh.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-ssh)
 
 > `ssh` is an [ansible](http://www.ansible.com) role which: 
 > 
+> * installs openssh (client/server)
 > * configures ssh
 > * adds known_hosts
 
@@ -25,7 +26,7 @@ $ arm install franklinkim.ssh
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-ssh.git
+$ git clone https://github.com/weareinteractive/ansible-ssh.git
 ```
 
 ## Dependencies
@@ -73,8 +74,8 @@ ssh_known_hosts: []
 ## Testing
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-role-ssh.git
-$ cd ansible-role-ssh
+$ git clone https://github.com/weareinteractive/ansible-ssh.git
+$ cd ansible-ssh
 $ vagrant up
 ```
 

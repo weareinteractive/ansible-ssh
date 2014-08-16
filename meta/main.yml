@@ -8,8 +8,7 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
-        - Precise
-        - Kylin
+        - All
   categories:
     - system
     - networking

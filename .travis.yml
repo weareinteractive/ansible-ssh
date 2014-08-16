@@ -10,6 +10,6 @@ install:
   - git clone https://github.com/bfmartin/ansible-sshknownhosts.git library/sshknownhosts
 script:
   - echo localhost > inventory
-  - ln -s ansible-role-ssh ../franklinkim.ssh
+  - ln -s ansible-ssh ../franklinkim.ssh
   - ansible-playbook --syntax-check -i inventory test.yml
   - ansible-playbook -i inventory test.yml --connection=local --sudo -vvvv

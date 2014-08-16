@@ -1,0 +1,13 @@
+---
+
+- name: Installing packages
+  apt: >
+    pkg={{ item }}
+    state=latest
+  with_items:
+    - openssh-server
+    - openssh-client
+  tags:
+    - system
+    - networking
+    - ssh
