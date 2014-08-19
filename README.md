@@ -8,6 +8,7 @@
 > * installs openssh (client/server)
 > * configures ssh
 > * adds known_hosts
+> * configures server
 
 ## Installation
 
@@ -35,6 +36,8 @@ $ git clone https://github.com/weareinteractive/ansible-ssh.git
 
 ## Variables
 
+Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
+
 ```
 # ssh_known_hosts:
 #  - github.com
@@ -55,6 +58,12 @@ ssh_service_state: started
 # system wide known hosts
 ssh_known_hosts: []
 ```
+
+## Handlers
+
+These are the handlers that are defined in `handlers/main.yml`.
+
+* `restart ssh` 
 
 ## Example playbook
 
