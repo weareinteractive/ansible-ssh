@@ -4,7 +4,9 @@
 #
 # ssh_known_hosts:
 #  - github.com
-#  - bitbucket.org
+#  - name: github.com
+#    key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+#
 
 # what ports, IPs and protocols we listen for
 ssh_port: [22]

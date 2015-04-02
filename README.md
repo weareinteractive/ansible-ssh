@@ -3,8 +3,8 @@
 [![Build Status](https://travis-ci.org/weareinteractive/ansible-ssh.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-ssh)
 [![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-ssh.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-ssh)
 
-> `ssh` is an [ansible](http://www.ansible.com) role which: 
-> 
+> `ssh` is an [ansible](http://www.ansible.com) role which:
+>
 > * installs openssh (client/server)
 > * configures ssh
 > * adds known_hosts
@@ -18,10 +18,10 @@ Using `ansible-galaxy`:
 $ ansible-galaxy install franklinkim.ssh
 ```
 
-Using `arm` ([Ansible Role Manager](https://github.com/mirskytech/ansible-role-manager/)):
+Using `requirements.yml`:
 
 ```
-$ arm install franklinkim.ssh
+- src: franklinkim.ssh
 ```
 
 Using `git`:
@@ -30,10 +30,6 @@ Using `git`:
 $ git clone https://github.com/weareinteractive/ansible-ssh.git
 ```
 
-## Dependencies
-
-* [sshknownhosts module](https://github.com/bfmartin/ansible-sshknownhosts)
-
 ## Variables
 
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
@@ -41,14 +37,16 @@ Here is a list of all the default variables for this role, which are also availa
 ```
 # ssh_known_hosts:
 #  - github.com
-#  - bitbucket.org
+#  - name: github.com
+#    key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+#
 
 # what ports, IPs and protocols we listen for
 ssh_port: [22]
 ssh_protocol: 2
 ssh_listen_address: []
 # authentication
-ssh_permit_root_login: 'no'
+ssh_permit_root_login: 'yes'
 ssh_pubkey_authentication: 'yes'
 ssh_password_authentication: 'yes'
 # start on boot
@@ -63,13 +61,14 @@ ssh_known_hosts: []
 
 These are the handlers that are defined in `handlers/main.yml`.
 
-* `restart ssh` 
+* `restart ssh`
 
 ## Example playbook
 
 ```
 - host: all
-  roles: 
+  sudo: yes
+  roles:
     - franklinkim.ssh
   vars:
     ssh_port:
@@ -77,7 +76,10 @@ These are the handlers that are defined in `handlers/main.yml`.
     ssh_permit_root_login: 'no'
     ssh_pubkey_authentication: 'yes'
     ssh_password_authentication: 'yes'
-
+    ssh_known_hosts:
+      - github.com
+      - name: github.com
+        key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
 ```
 
 ## Testing
