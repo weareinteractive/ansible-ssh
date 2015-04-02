@@ -1,7 +1,9 @@
 # Ansible Ssh Role
 
-[![Build Status](https://travis-ci.org/weareinteractive/ansible-ssh.png?branch=master)](https://travis-ci.org/weareinteractive/ansible-ssh)
-[![Stories in Ready](https://badge.waffle.io/weareinteractive/ansible-ssh.svg?label=ready&title=Ready)](http://waffle.io/weareinteractive/ansible-ssh)
+[![Build Status](https://img.shields.io/travis/weareinteractive/ansible-ssh.svg)](https://travis-ci.org/weareinteractive/ansible-nodejs)
+[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/weareinteractive/ansible-ssh/master/LICENSE)
+[![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
+[![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
 
 > `ssh` is an [ansible](http://www.ansible.com) role which:
 >
@@ -27,7 +29,7 @@ Using `requirements.yml`:
 Using `git`:
 
 ```
-$ git clone https://github.com/weareinteractive/ansible-ssh.git
+$ git clone https://github.com/weareinteractive/ansible-ssh.git franklinkim.ssh
 ```
 
 ## Variables
