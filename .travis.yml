@@ -7,7 +7,6 @@ before_install:
  - sudo apt-get install -qq python-apt python-pycurl
 install:
   - pip install ansible
-  - git clone https://github.com/bfmartin/ansible-sshknownhosts.git library/sshknownhosts
 script:
   - echo localhost > inventory
   - ln -s ansible-ssh ../franklinkim.ssh
