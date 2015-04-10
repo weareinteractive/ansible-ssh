@@ -12,5 +12,4 @@
     ssh_password_authentication: 'yes'
     ssh_known_hosts:
       - github.com
-      - name: github.com
-        key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+      - bitbucket.org

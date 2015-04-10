@@ -1,9 +1,7 @@
 ---
 
 - name: Registering known hosts
-  known_hosts:
+  sshknownhosts:
     host: "{{ item.name if item.name is defined else item }}"
-    key: "{{ item.key if item.key is defined else lookup('pipe', 'ssh-keyscan -t rsa ' + item) }}"
-    path: /etc/ssh/ssh_known_hosts
-    state: present
+    dest: /etc/ssh/ssh_known_hosts
   with_items: ssh_known_hosts

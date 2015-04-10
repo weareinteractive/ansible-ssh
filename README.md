@@ -1,4 +1,4 @@
-# Ansible Ssh Role
+# Ansible SSH Role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-ssh.svg)](https://travis-ci.org/weareinteractive/ansible-nodejs)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/weareinteractive/ansible-ssh/master/LICENSE)
@@ -31,6 +31,11 @@ Using `git`:
 ```
 $ git clone https://github.com/weareinteractive/ansible-ssh.git franklinkim.ssh
 ```
+
+## Dependencies
+
+* Ansible 1.9
+* [sshknownhosts module](https://github.com/bfmartin/ansible-sshknownhosts)
 
 ## Variables
 
@@ -80,8 +85,7 @@ These are the handlers that are defined in `handlers/main.yml`.
     ssh_password_authentication: 'yes'
     ssh_known_hosts:
       - github.com
-      - name: github.com
-        key: "{{ lookup('pipe', 'ssh-keyscan -t rsa github.com') }}"
+      - bitbucket.org
 ```
 
 ## Testing
