@@ -37,6 +37,17 @@ $ git clone https://github.com/weareinteractive/ansible-ssh.git franklinkim.ssh
 * Ansible 1.9
 * [sshknownhosts module](https://github.com/bfmartin/ansible-sshknownhosts)
 
+## Known issues
+
+If you're running with Ansible 2.1+ you might encounter sth like:
+
+```
+ERROR! no action detected in task. This often indicates a misspelled module name, or incorrect module path.
+```
+
+This is due to [ansible/ansible#16561](https://github.com/ansible/ansible/issues/16561) and can be fixed by adding `./library` to your `ansible.cfg`.
+See [issue #4](https://github.com/weareinteractive/ansible-ssh/issues/4).
+
 ## Variables
 
 Here is a list of all the default variables for this role, which are also available in `defaults/main.yml`.
