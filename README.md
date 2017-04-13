@@ -85,7 +85,7 @@ These are the handlers that are defined in `handlers/main.yml`.
 
 ```
 - host: all
-  sudo: yes
+  become: yes
   roles:
     - franklinkim.ssh
   vars:
