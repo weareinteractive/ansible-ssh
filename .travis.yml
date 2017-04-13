@@ -11,5 +11,6 @@ install:
 script:
   - echo localhost > inventory
   - ln -s ansible-ssh ../franklinkim.ssh
+  - ansible-playbook --version
   - ansible-playbook --syntax-check -i inventory test.yml
   - ansible-playbook -i inventory test.yml --connection=local --sudo -vvvv
