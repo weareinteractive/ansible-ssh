@@ -1,5 +1,6 @@
-.*
-*~
-!.git*
-!.travis.yml
-!.editorconfig
+*.log
+*.retry
+.DS_Store
+.vagrant
+.vscode
+.idea
