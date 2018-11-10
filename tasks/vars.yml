@@ -1,6 +1,11 @@
 ---
+
+- debug: var=ansible_distribution
+
+- debug: var=ansible_distribution_release
+
 - name: Including variables
   include_vars: "{{ item }}"
   with_first_found:
-    - "{{ ansible_distribution }}/{{ ansible_distribution_release }}.yml"
-    - "{{ ansible_distribution }}.yml"
+    - "{{ ansible_distribution | lower }}/{{ ansible_distribution_release }}.yml"
+    - "{{ ansible_distribution | lower }}.yml"
