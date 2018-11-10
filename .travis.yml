@@ -14,3 +14,6 @@ script:
   - ansible-playbook --version
   - ansible-playbook --syntax-check -i inventory tests/main.yml
   - ansible-playbook -i inventory tests/main.yml --connection=local --sudo -vvvv
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
