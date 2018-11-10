@@ -4,16 +4,29 @@
 #
 # ssh_known_hosts:
 #  - github.com
+# ssh_config:
+#   HostKey:
+#     - /etc/ssh/ssh_host_rsa_key
+#     - /etc/ssh/ssh_host_dsa_key
+#     - /etc/ssh/ssh_host_ecdsa_key
+#     - /etc/ssh/ssh_host_ed25519_key
+#   ChallengeResponseAuthentication: "no"
+#   UsePAM: "yes"
+#   X11Forwarding: "yes"
+#   PrintMotd: "no"
+#   AcceptEnv: LANG LC_*
+#   Subsystem: sftp /usr/lib/openssh/sftp-server
 #
 
-# what ports, IPs and protocols we listen for
+# DEPRICATION NOTICE:
+# use the `ssh_config` map @see var/DISTRIBUTION/VERSION.yml
 ssh_port: [22]
 ssh_protocol: 2
 ssh_listen_address: []
-# authentication
 ssh_permit_root_login: 'yes'
 ssh_pubkey_authentication: 'yes'
 ssh_password_authentication: 'yes'
+
 # start on boot
 ssh_service_enabled: yes
 # current state: started, stopped

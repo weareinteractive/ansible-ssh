@@ -1,0 +1,13 @@
+---
+ssh_config:
+  Port: "{{ ssh_port }}"
+  ListenAddress: "{{ ssh_listen_address }}"
+  PermitRootLogin: "{{ ssh_permit_root_login }}"
+  PubkeyAuthentication: "{{ ssh_pubkey_authentication }}"
+  PasswordAuthentication: "{{ ssh_password_authentication }}"
+  ChallengeResponseAuthentication: "no"
+  UsePAM: "yes"
+  X11Forwarding: "yes"
+  PrintMotd: "no"
+  AcceptEnv: LANG LC_*
+  Subsystem: sftp /usr/lib/openssh/sftp-server

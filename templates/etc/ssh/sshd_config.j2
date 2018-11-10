@@ -1,0 +1,17 @@
+# {{ ansible_managed }}
+
+{% macro print_array(name, values=[]) -%}
+{% for value in values -%}
+{{ name }} {{ value }}
+{% endfor %}
+{% endmacro %}
+
+{% for key, value in ssh_config.items() -%}
+{% if value is string or value is number %}
+{{ key }} {{ value }}
+{% else %}
+{{ print_array(key, value) }}
+{% endif %}
+{% endfor %}
+
+

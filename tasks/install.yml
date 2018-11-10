@@ -2,8 +2,9 @@
 
 - name: Installing packages
   apt:
-    pkg: "{{ item }}"
+    name: "{{ packages }}"
     state: present
-  with_items:
-    - openssh-server
-    - openssh-client
+  vars:
+    packages:
+      - openssh-server
+      - openssh-client

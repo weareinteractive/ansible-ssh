@@ -1,27 +1,35 @@
 ---
 
-- include: install.yml
+
+- import_tasks: vars.yml
+  tags:
+    - system
+    - networking
+    - ssh
+    - ssh-vars
+
+- import_tasks: install.yml
   tags:
     - system
     - networking
     - ssh
     - ssh-install
 
-- include: config.yml
+- import_tasks: config.yml
   tags:
     - system
     - networking
     - ssh
     - ssh-config
 
-- include: known_hosts.yml
+- import_tasks: known_hosts.yml
   tags:
     - system
     - networking
     - ssh
     - ssh-known-hosts
 
-- include: service.yml
+- import_tasks: service.yml
   tags:
     - system
     - networking
