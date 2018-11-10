@@ -1,0 +1,18 @@
+---
+
+galaxy_name: weareinteractive.ssh
+github_user: weareinteractive
+github_name: ansible-ssh
+badges: |
+  [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-ssh.svg)](https://travis-ci.org/weareinteractive/ansible-ssh)
+  [![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.ssh-blue.svg)](https://galaxy.ansible.com/list#/roles/3275)
+  [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
+  [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
+description: |
+  > * installs ssh
+  > * configures ssh
+  > * adds logrotate for ssh container logs
+
+  **Note:**
+
+  > Since Ansible Galaxy switched all role names to the organization name, this role has moved from `franklinkim.ssh` to `weareinteractive.ssh`!
