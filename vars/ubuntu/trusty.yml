@@ -1,0 +1,33 @@
+ssh_config:
+  Port: "{{ ssh_port }}"
+  Protocol: "{{ ssh_protocol }}"
+  ListenAddress: "{{ ssh_listen_address }}"
+  HostKey:
+    - /etc/ssh/ssh_host_rsa_key
+    - /etc/ssh/ssh_host_dsa_key
+    - /etc/ssh/ssh_host_ecdsa_key
+    - /etc/ssh/ssh_host_ed25519_key
+  UsePrivilegeSeparation: "yes"
+  KeyRegenerationInterval: 3600
+  ServerKeyBits: 1024
+  SyslogFacility: AUTH
+  LogLevel: INFO
+  LoginGraceTime: 120
+  PermitRootLogin: "{{ ssh_permit_root_login }}"
+  StrictModes: "yes"
+  RSAAuthentication: "yes"
+  PubkeyAuthentication: "{{ ssh_pubkey_authentication }}"
+  IgnoreRhosts: "yes"
+  RhostsRSAAuthentication: "no"
+  HostbasedAuthentication: "no"
+  PermitEmptyPasswords: "no"
+  ChallengeResponseAuthentication: "no"
+  PasswordAuthentication: "{{ ssh_password_authentication }}"
+  X11Forwarding: "yes"
+  X11DisplayOffset: 10
+  PrintMotd: "no"
+  PrintLastLog: "yes"
+  TCPKeepAlive: "yes"
+  AcceptEnv: LANG LC_*
+  Subsystem: sftp /usr/lib/openssh/sftp-server
+  UsePAM: "yes"

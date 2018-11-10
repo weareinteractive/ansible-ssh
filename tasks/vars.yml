@@ -1,9 +1,5 @@
 ---
 
-- debug: var=ansible_distribution
-
-- debug: var=ansible_distribution_release
-
 - name: Including variables
   include_vars: "{{ item }}"
   with_first_found:
