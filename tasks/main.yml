@@ -1,6 +1,5 @@
 ---
 
-
 - import_tasks: vars.yml
   tags:
     - system
