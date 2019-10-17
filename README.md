@@ -38,7 +38,7 @@ $ git clone https://github.com/weareinteractive/ansible-ssh.git weareinteractive
 ## Dependencies
 
 * Ansible >= 2.4
-* [sshknownhosts](https://github.com/bfmartin/ansible-sshknownhosts) installed in your `ANSIBLE_LIBRARY` path
+* [sshknownhosts](https://github.com/bfmartin/ansible-sshknownhosts) installed in your `ANSIBLE_LIBRARY` path (see #4)
 
 ## Variables
 
