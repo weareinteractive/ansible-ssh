@@ -13,7 +13,7 @@ script:
   - ln -s ansible-ssh ../weareinteractive.ssh
   - ansible-playbook --version
   - ansible-playbook --syntax-check -i inventory tests/main.yml
-  - ansible-playbook -i inventory tests/main.yml --connection=local --sudo -vvvv
+  - ansible-playbook -i inventory tests/main.yml --connection=local --become -vvvv
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
