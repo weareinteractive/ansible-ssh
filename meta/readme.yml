@@ -16,3 +16,5 @@ description: |
   **Note:**
 
   > Since Ansible Galaxy switched all role names to the organization name, this role has moved from `franklinkim.ssh` to `weareinteractive.ssh`!
+after_dependencies: |
+  * [sshknownhosts](https://github.com/bfmartin/ansible-sshknownhosts) installed in your `ANSIBLE_LIBRARY` path (see #4)
