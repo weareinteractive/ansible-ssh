@@ -1,3 +1,13 @@
+<a name="1.3.2"></a>
+### 1.3.2 (2020-05-21)
+
+
+#### Bug Fixes
+
+*   only include default if no config provided ([44ecf820](https://github.com/weareinteractive/ansible-ssh/commit/44ecf820381fa127943069ed71dc6b18068cb7d6))
+
+
+
 <a name="1.3.1"></a>
 ### 1.3.1 (2019-10-17)
 
