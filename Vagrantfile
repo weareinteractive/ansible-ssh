@@ -13,8 +13,13 @@ Vagrant.configure("2") do |config|
     instance.vm.box = 'ubuntu/xenial64'
   end
 
-  config.vm.provision "shell", inline: "sudo apt-get update"
-  config.vm.provision "shell", inline: "sudo apt-get install -y python"
+  config.vm.provision "shell", inline: <<-SHELL
+  echo "Updating virtual machine..."
+  sudo DEBIAN_FRONTEND=noninteractive apt-get update
+
+  echo "Installing prerequisites..."
+  sudo DEBIAN_FRONTEND=noninteractive apt-get install -y python
+  SHELL
 
   # View the documentation for the provider you're using for more
   # information on available options.
