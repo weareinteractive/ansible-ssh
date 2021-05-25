@@ -25,6 +25,11 @@ galaxy_info:
     - name: Debian
       versions:
         - bullseye
+    - name: OpenBSD
+      versions:
+        - 6.8
+        - 6.9
+  #
   # List tags for your role here, one per line. A tag is
   # a keyword that describes and categorizes the role.
   # Users find roles by searching for tags. Be sure to

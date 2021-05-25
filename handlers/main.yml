@@ -3,6 +3,6 @@
 
 - name: restart ssh
   service:
-    name: ssh
+    name: "{{ ssh_service }}"
     state: restarted
   when: ssh_service_state != 'stopped'
