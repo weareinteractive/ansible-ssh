@@ -84,8 +84,9 @@ galaxy_info:
   #    versions:
   #      - all
   #      - any
-  #  - name: Debian
-  #    versions:
+    - name: Debian
+      versions:
+        - bullseye
   #      - all
   #      - etch
   #      - lenny
