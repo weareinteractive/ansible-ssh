@@ -1,4 +1,11 @@
 ---
+ssh_packages:
+  - openssh-server
+  - openssh-client
+  - openssh-sftp-server
+
+ssh_service: ssh
+
 ssh_config:
   Include: /etc/ssh/sshd_config.d/*.conf
   ChallengeResponseAuthentication: "no"
