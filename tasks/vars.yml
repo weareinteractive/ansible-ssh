@@ -1,10 +1,12 @@
 ---
 
-- name: Including variables
+- name: Including OS specific variables
   include_vars: "{{ lookup('first_found', params) }}"
   vars:
     params:
+      errors: ignore
       files:
         - "{{ ansible_distribution | lower }}/{{ ansible_distribution_release }}.yml"
         - "{{ ansible_distribution | lower }}.yml"
-  when: ssh_config is not defined
+      paths:
+        - 'vars'
