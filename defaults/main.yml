@@ -28,7 +28,7 @@ ssh_pubkey_authentication: 'yes'
 ssh_password_authentication: 'yes'
 
 # start on boot
-ssh_service_enabled: yes
+ssh_service_enabled: true
 # current state: started, stopped
 ssh_service_state: started
 # system wide known hosts
