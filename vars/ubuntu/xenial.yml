@@ -1,3 +1,4 @@
+---
 ssh_config:
   Port: "{{ ssh_port }}"
   Protocol: "{{ ssh_protocol }}"

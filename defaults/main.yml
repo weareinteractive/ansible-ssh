@@ -18,6 +18,12 @@
 #   Subsystem: sftp /usr/lib/openssh/sftp-server
 #
 
+# variable fallback defaults
+# usually overridden from Play or distro specific vars file
+ssh_config: {}
+ssh_packages: []
+ssh_service: sshd
+
 # DEPRICATION NOTICE:
 # use the `ssh_config` map @see var/DISTRIBUTION/VERSION.yml
 ssh_port: [22]
@@ -28,7 +34,7 @@ ssh_pubkey_authentication: 'yes'
 ssh_password_authentication: 'yes'
 
 # start on boot
-ssh_service_enabled: yes
+ssh_service_enabled: true
 # current state: started, stopped
 ssh_service_state: started
 # system wide known hosts

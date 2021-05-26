@@ -1,7 +1,6 @@
 ---
-
 - hosts: all
-  become: yes
+  become: true
   roles:
     - weareinteractive.ssh
   vars:
@@ -40,4 +39,3 @@
       AcceptEnv: LANG LC_*
       Subsystem: sftp /usr/lib/openssh/sftp-server
       UsePAM: "yes"
-

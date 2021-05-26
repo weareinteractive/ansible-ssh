@@ -3,4 +3,4 @@
 - name: Registering known hosts
   sshknownhosts:
     host: "{{ item.name if item.name is defined else item }}"
-  with_items: "{{ ssh_known_hosts }}"
+  loop: "{{ ssh_known_hosts }}"
