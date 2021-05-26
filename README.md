@@ -7,9 +7,10 @@
 
 > `weareinteractive.ssh` is an [Ansible](http://www.ansible.com) role which:
 >
-> * installs ssh
-> * configures ssh
-> * adds logrotate for ssh container logs
+> * Installs OpenSSH (if required)
+> * Configures OpenSSH
+> * Ensures OpenSSH is running and started on boot
+
 
 **Note:**
 
@@ -37,8 +38,8 @@ $ git clone https://github.com/weareinteractive/ansible-ssh.git weareinteractive
 
 ## Dependencies
 
-* Ansible >= 2.4
-* [sshknownhosts](https://github.com/bfmartin/ansible-sshknownhosts) installed in your `ANSIBLE_LIBRARY` path (see [#4](https://github.com/weareinteractive/ansible-ssh/issues/4))
+* Ansible >= 2.9
+* [sshknownhosts](https://github.com/bfmartin/ansible-sshknownhosts) installed in your `ANSIBLE_LIBRARY` path (see [#4](https://github.com/weareinteractive/ansible-ssh/issues/4)), only required when the `ssh_known_hosts` list is used.
 
 ## Variables
 
@@ -65,6 +66,12 @@ Here is a list of all the default variables for this role, which are also availa
 #   Subsystem: sftp /usr/lib/openssh/sftp-server
 #
 
+# variable fallback defaults
+# usually overridden from Play or distro specific vars file
+ssh_config: {}
+ssh_packages: []
+ssh_service: sshd
+
 # DEPRICATION NOTICE:
 # use the `ssh_config` map @see var/DISTRIBUTION/VERSION.yml
 ssh_port: [22]
@@ -75,7 +82,7 @@ ssh_pubkey_authentication: 'yes'
 ssh_password_authentication: 'yes'
 
 # start on boot
-ssh_service_enabled: yes
+ssh_service_enabled: true
 # current state: started, stopped
 ssh_service_state: started
 # system wide known hosts
@@ -89,14 +96,13 @@ These are the handlers that are defined in `handlers/main.yml`.
 
 ```yaml
 ---
-# For more information about handlers see:
-# http://www.ansibleworks.com/docs/playbooks.html#handlers-running-operations-on-change
-#
+# handlers for ssh role
 
 - name: restart ssh
-  action: service name=ssh state=restarted
+  service:
+    name: "{{ ssh_service }}"
+    state: restarted
   when: ssh_service_state != 'stopped'
-
 ```
 
 
@@ -147,8 +153,6 @@ This is an example playbook:
       AcceptEnv: LANG LC_*
       Subsystem: sftp /usr/lib/openssh/sftp-server
       UsePAM: "yes"
-
-
 ```
 
 
