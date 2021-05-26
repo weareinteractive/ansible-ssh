@@ -2,15 +2,12 @@
 ssh_packages:
   - openssh-server
   - openssh-client
+  - openssh-sftp-server
 
 ssh_service: ssh
 
 ssh_config:
-  Port: "{{ ssh_port }}"
-  ListenAddress: "{{ ssh_listen_address }}"
-  PermitRootLogin: "{{ ssh_permit_root_login }}"
-  PubkeyAuthentication: "{{ ssh_pubkey_authentication }}"
-  PasswordAuthentication: "{{ ssh_password_authentication }}"
+  Include: /etc/ssh/sshd_config.d/*.conf
   ChallengeResponseAuthentication: "no"
   UsePAM: "yes"
   X11Forwarding: "yes"

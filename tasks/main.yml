@@ -21,7 +21,8 @@
     - ssh
     - ssh-config
 
-- import_tasks: known_hosts.yml
+- include_tasks: known_hosts.yml
+  when: ssh_known_hosts | length > 0
   tags:
     - system
     - networking
