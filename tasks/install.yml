@@ -1,10 +1,7 @@
 ---
 
 - name: Installing packages
-  apt:
-    name: "{{ packages }}"
+  package:
+    name: "{{ ssh_packages }}"
     state: present
-  vars:
-    packages:
-      - openssh-server
-      - openssh-client
+  when: ssh_packages | length > 0

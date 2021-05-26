@@ -1,4 +1,10 @@
 ---
+ssh_packages:
+  - openssh-server
+  - openssh-client
+
+ssh_service: ssh
+
 ssh_config:
   Port: "{{ ssh_port }}"
   Protocol: "{{ ssh_protocol }}"

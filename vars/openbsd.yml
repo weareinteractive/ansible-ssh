@@ -1,0 +1,8 @@
+---
+ssh_packages: []
+ssh_service: sshd
+
+ssh_config:
+  PermitRootLogin: "no"
+  AuthorizedKeysFile: .ssh/authorized_keys
+  Subsystem: sftp /usr/libexec/sftp-server
