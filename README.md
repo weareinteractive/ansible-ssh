@@ -1,7 +1,7 @@
 # Ansible weareinteractive.ssh role
 
 [![Build Status](https://img.shields.io/travis/weareinteractive/ansible-ssh.svg)](https://travis-ci.org/weareinteractive/ansible-ssh)
-[![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.ssh-blue.svg)](https://galaxy.ansible.com/list#/roles/3275)
+[![Galaxy](http://img.shields.io/badge/galaxy-weareinteractive.ssh-blue.svg)](https://galaxy.ansible.com/weareinteractive/ssh)
 [![GitHub Tags](https://img.shields.io/github/tag/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
 [![GitHub Stars](https://img.shields.io/github/stars/weareinteractive/ansible-ssh.svg)](https://github.com/weareinteractive/ansible-ssh)
 
