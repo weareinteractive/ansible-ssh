@@ -11,7 +11,7 @@ install:
   - git clone https://github.com/bfmartin/ansible-sshknownhosts.git library/sshknownhosts
 script:
   - echo localhost > inventory
-  - ln -s ansible-ssh ../weareinteractive.ssh
+  - ln -s "$PWD" ../weareinteractive.ssh
   - ansible-playbook --version
   - ansible-playbook --syntax-check -i inventory tests/main.yml
   - ansible-playbook -i inventory tests/main.yml --connection=local --become -vvvv
