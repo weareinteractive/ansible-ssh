@@ -5,6 +5,6 @@
     dest: /etc/ssh/sshd_config
     backup: true
     owner: root
-    group: root
+    group: "{{ sshd_config_group }} | default('root')"
     mode: "0644"
   notify: restart ssh
