@@ -2,6 +2,8 @@
 ssh_packages: []
 ssh_service: sshd
 
+sshd_config_group: 'wheel'
+
 ssh_config:
   PermitRootLogin: "no"
   AuthorizedKeysFile: .ssh/authorized_keys
