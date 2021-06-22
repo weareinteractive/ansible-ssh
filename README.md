@@ -11,7 +11,6 @@
 > * Configures OpenSSH
 > * Ensures OpenSSH is running and started on boot
 
-
 **Note:**
 
 > Since Ansible Galaxy switched all role names to the organization name, this role has moved from `franklinkim.ssh` to `weareinteractive.ssh`!
@@ -103,6 +102,7 @@ These are the handlers that are defined in `handlers/main.yml`.
     name: "{{ ssh_service }}"
     state: restarted
   when: ssh_service_state != 'stopped'
+
 ```
 
 
@@ -112,9 +112,8 @@ This is an example playbook:
 
 ```yaml
 ---
-
 - hosts: all
-  become: yes
+  become: true
   roles:
     - weareinteractive.ssh
   vars:
@@ -153,6 +152,7 @@ This is an example playbook:
       AcceptEnv: LANG LC_*
       Subsystem: sftp /usr/lib/openssh/sftp-server
       UsePAM: "yes"
+
 ```
 
 
