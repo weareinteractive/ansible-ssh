@@ -5,7 +5,7 @@ ssh_packages:
 
 ssh_service: ssh
 
-ssh_config:
+ssh_config_default:
   Port: "{{ ssh_port }}"
   ListenAddress: "{{ ssh_listen_address }}"
   PermitRootLogin: "{{ ssh_permit_root_login }}"

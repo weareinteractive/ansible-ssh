@@ -4,7 +4,7 @@ ssh_service: sshd
 
 sshd_config_group: 'wheel'
 
-ssh_config:
+ssh_config_default:
   PermitRootLogin: "no"
   AuthorizedKeysFile: .ssh/authorized_keys
   Subsystem: sftp /usr/libexec/sftp-server
