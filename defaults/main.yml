@@ -20,7 +20,7 @@
 
 # variable fallback defaults
 # usually overridden from Play or distro specific vars file
-ssh_config: {}
+ssh_config: "{{ ssh_config_default }}"
 ssh_packages: []
 ssh_service: sshd
 

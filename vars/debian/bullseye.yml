@@ -6,7 +6,7 @@ ssh_packages:
 
 ssh_service: ssh
 
-ssh_config:
+ssh_config_default:
   Include: /etc/ssh/sshd_config.d/*.conf
   ChallengeResponseAuthentication: "no"
   UsePAM: "yes"

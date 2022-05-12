@@ -1,3 +1,11 @@
+<a name="1.4.2"></a>
+### 1.4.2 (2022-05-12)
+
+#### Bug Fixes
+
+*   resolve issue with ssh_config variable precedence
+
+
 <a name="1.4.1"></a>
 ### 1.4.1 ()
 
